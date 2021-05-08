@@ -7,14 +7,12 @@ namespace PilasyColas.Clases
     class PListaSimple
     {
         public Nodo primero;
-        public Nodo segundo;
         int longi;
 
         //constructor 
         public PListaSimple()
         {
             primero = null;
-            segundo = null;
         }
 
         //aqui inseertamos datos a la lista
@@ -45,7 +43,7 @@ namespace PilasyColas.Clases
             }
         }
 
-        public void invers()
+        public void Verinverso()
         {
             Nodo actual = primero;
             while (actual != null)
@@ -63,13 +61,18 @@ namespace PilasyColas.Clases
             {
                 throw new Exception("Pila Vacia!");
             }
-            aux = (char)primero.dato;
-            primero = primero.enlace;
-            longi--;
-            return aux;
+            else
+            {
+                aux = (char)primero.dato;
+                primero = primero.enlace;
+                longi--;
+                return aux;
+            }
+
+            
         }
 
-        public Object Delete()
+        public object Delete()
         {
             char aux;
             if (ListaVacia())

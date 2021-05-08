@@ -7,12 +7,87 @@ namespace PilasyColas.Clases
     class PilaEvaluador
     {
         //evaluar las expresiones
-        public  double evaluar(String Infija)
+        public static double evaluar(String infija)
         {
-            String Posfija = Convertir(Infija);//convierte la expresion infija a posfija
-            Console.WriteLine("La expresion es: " + Posfija);
-            return PosfijaCheck(Posfija);
+            String posfija = convertir(infija);//convierte la expresion infija a posfija 
+            Console.WriteLine("expresion: " + posfija);
+            return PosfijaCheck(posfija);
+
         }
+
+        //convertir expresion 
+        private static String convertir(String infija)
+        {
+            //convertir expresion infija
+            String posfija = "";
+            PilaLineal pila = new PilaLineal();
+
+
+            for (int i = 0; i < infija.Length; i++)
+            {
+
+                char letra = infija[i];
+
+                if (Esoperador(infija[i]))
+                {
+
+                    if (pila.pilavacia())
+                    {
+                        pila.insertar(letra);
+                    }
+                    else
+                    {
+                        int pe = PrioridadExpre(letra);
+                        int pp = PrioridadPila((char)pila.cimaPila());
+                        if (pe > pp)
+                        {
+                            pila.insertar(letra); //apilamos la letra
+                        }
+                        else
+                        {
+
+                            posfija += pila.quitarChar();
+                            pila.insertar(letra);
+                        }
+                    }
+                }
+                else
+                {
+                    posfija += letra;
+                }
+            }
+
+            while (!pila.pilavacia())
+            {
+                posfija += pila.quitarChar();
+            }
+            return posfija;
+        }
+
+        private static double PosfijaCheck(String Posfija)
+        {
+            PilaLineal pila = new PilaLineal();
+
+            for (int i = 0; i < Posfija.Length; i++)
+            {
+                char letra = Posfija[i];
+
+                if (!Esoperador(letra))
+                {
+                    double num = Convert.ToDouble(letra + "");
+                    pila.insertar(num);
+                }
+                else
+                {
+                    double num2 = (double)pila.quitarChar();
+                    double num1 = (double)pila.quitarChar();
+                    double num3 = Operacion(letra, num1, num2);
+                    pila.insertar(num3);
+                }
+            }
+            return (double)pila.cimaPila();
+        }
+
 
         //para devolver la prioridad
         private static int PrioridadExpre(char Operador)
@@ -35,38 +110,15 @@ namespace PilasyColas.Clases
             return 0;
         }
 
-
-        private static double PosfijaCheck(String Posfija)
-        {
-            PilaLineal Pila = new PilaLineal();
-            for (int i = 0; i < Posfija.Length; i++)
-            {
-                char letra = Posfija[i];
-                if (!Esoperador(letra))
-                {
-                    double num = Convert.ToDouble(letra + "");
-                    Pila.insertar(num);
-
-                }
-                else
-                {
-                    double num1 = (double)Pila.quitarChar();
-                    double num2 = (double)Pila.quitarChar();
-                    double num3 = Operacion(letra, num2, num1);
-                    Pila.insertar(num3);
-                }
-            }
-            return (double)Pila.cimaPila();
-        }
-
         //para saber si es un operador
         private static bool Esoperador(char letra)
         {
-            if (letra == '*' || letra == '/' || letra == '-' || letra == '+' || letra == '(' || letra == ')' || letra == '^') ;
+            if (letra == '*' || letra == '/' || letra == '+' || letra == '-' || letra == '(' || letra == ')' || letra == '^')
             {
                 return true;
             }
             return false;
+
         }
 
         private static double Operacion(char letra, double num, double num2)
@@ -79,46 +131,7 @@ namespace PilasyColas.Clases
             return 0;
         }
 
-        //convertir expresion 
-        private static String Convertir(String Infija)
-        {
-            //convertir expresion infija
-            String Posfija = "";
-            PilaLineal pila = new PilaLineal();
-            for (int i =0; i < Infija.Length; i++)
-            {
-                char letra = Infija[i];
-                if (Esoperador(Infija[i]))
-                {
-                    if (pila.pilavacia())
-                    {
-                        pila.insertar(letra);
-                    }
-                    else
-                    {
-                        int Pex = PrioridadExpre(letra);
-                        int Pp = PrioridadPila((char)pila.cimaPila());
-                        if (Pex > Pp)
-                        {
-                            pila.insertar(letra);
-                        }
-                        else
-                        {
-
-                        }
-                    }
-                }
-
-                else
-                {
-                    Posfija += letra;
-                }
-            }
-            while (!pila.pilavacia())
-            {
-                Posfija += pila.quitarChar();
-            }
-            return Posfija;
-        }
+        
+        
     }
 }

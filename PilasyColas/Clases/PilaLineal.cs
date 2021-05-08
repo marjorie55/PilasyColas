@@ -21,7 +21,7 @@ namespace PilasyColas.Clases
 
         public bool pilallena()
         {
-            return cima == TAMPILA - 1;//quiere decir que la pila esta llena
+            return cima == (TAMPILA - 1);//quiere decir que la pila esta llena
         }
 
         //operaciones que modifica la pila
@@ -43,16 +43,19 @@ namespace PilasyColas.Clases
         }
 
         //retorna un tipo char
-        public Object quitarChar()
+        public object quitarChar()
         {
             object aux;
             if (pilavacia())
             {
-                throw new Exception("Pila vacia, no hay data");
+                throw new Exception("La pila esta vacia, no se puede sacar");
+
             }
+
             aux = (object)ListaPila[cima];
             cima--;
             return aux;
+
         }
 
         //extraer elemento de la pila(pop)
