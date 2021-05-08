@@ -1,0 +1,13 @@
+C:\Users\USUARIOTC\source\repos\PilasyColas\PilasyColas\obj\Debug\netcoreapp3.1\PilasyColas.csprojAssemblyReference.cache
+C:\Users\USUARIOTC\source\repos\PilasyColas\PilasyColas\obj\Debug\netcoreapp3.1\PilasyColas.AssemblyInfoInputs.cache
+C:\Users\USUARIOTC\source\repos\PilasyColas\PilasyColas\obj\Debug\netcoreapp3.1\PilasyColas.AssemblyInfo.cs
+C:\Users\USUARIOTC\source\repos\PilasyColas\PilasyColas\obj\Debug\netcoreapp3.1\PilasyColas.csproj.CoreCompileInputs.cache
+C:\Users\USUARIOTC\source\repos\PilasyColas\PilasyColas\bin\Debug\netcoreapp3.1\PilasyColas.exe
+C:\Users\USUARIOTC\source\repos\PilasyColas\PilasyColas\bin\Debug\netcoreapp3.1\PilasyColas.deps.json
+C:\Users\USUARIOTC\source\repos\PilasyColas\PilasyColas\bin\Debug\netcoreapp3.1\PilasyColas.runtimeconfig.json
+C:\Users\USUARIOTC\source\repos\PilasyColas\PilasyColas\bin\Debug\netcoreapp3.1\PilasyColas.runtimeconfig.dev.json
+C:\Users\USUARIOTC\source\repos\PilasyColas\PilasyColas\bin\Debug\netcoreapp3.1\PilasyColas.dll
+C:\Users\USUARIOTC\source\repos\PilasyColas\PilasyColas\bin\Debug\netcoreapp3.1\PilasyColas.pdb
+C:\Users\USUARIOTC\source\repos\PilasyColas\PilasyColas\obj\Debug\netcoreapp3.1\PilasyColas.dll
+C:\Users\USUARIOTC\source\repos\PilasyColas\PilasyColas\obj\Debug\netcoreapp3.1\PilasyColas.pdb
+C:\Users\USUARIOTC\source\repos\PilasyColas\PilasyColas\obj\Debug\netcoreapp3.1\PilasyColas.genruntimeconfig.cache
